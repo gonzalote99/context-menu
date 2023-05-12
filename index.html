@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>context menu</title>
+</head>
+<body>
+	<h2>context menu</h2>
+	<p>right click</p>
+	<br>
+	<div id="CustomContextMenu" style="background:#6cc9d8;width:300px;height:50px;">
+    <p>div context menu</p>
+	</div>
+	<br><br>
+  <a href="https://github.com/gonzalote99">github page</a>
+</body>
+<script src="CtxMenu.js"></script>
+<script>
+ function ContextMenuExampleFunction() {
+	 alert("hello")
+ }
+
+ var contextMenu = CtxMenu();
+
+ contextMenu.addItem("hello", ContextMenuExampleFunction);
+
+ contextMenu.addSeparator();
+
+ contextMenu.addItem('reload page', function() {
+	 location.reload();
+
+ },
+ Icon = "https://raw.githubusercontent.com/nils-soderman/CtxMenu-Javascript/master/example-page/icon.png",
+ index = undefined,
+ bInvertIconDarkMode = false
+
+ );
+
+ function changeElementColor (element) {
+	 var color = [
+		 Math.random() * 255,
+		 Math.random() * 255,
+		 Math.random() * 255
+	 ];
+	 element.style.background = "rgba("+ color + ")"
+ }
+
+ var contextMenuTwo = CtxMenu("#CustomContextMenu");
+ contextMenuTwo.addItem("change color", changeElementColor)
+
+
+
+
+
+
+	</script>
+</html>
